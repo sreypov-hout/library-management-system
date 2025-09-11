@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="CENTER" prefHeight="600.0" prefWidth="800.0" stylesheets="@/com/example/javafx/css/style.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.controller.LoginController">
+    <VBox alignment="CENTER" spacing="20.0">
+        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+<!--                <Image url="@/com/example/javafx/images/logo/logo_login.png" />-->
+                <Image url="@/logo-login.png" />
+            </image>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </ImageView>
+
+        <VBox alignment="CENTER" styleClass="login-card" maxWidth="380.0" minWidth="350.0" spacing="20.0">
+            <padding>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+            <Label styleClass="login-title" text="Log in" />
+
+            <VBox spacing="5.0">
+                <Label text="Username" />
+                <TextField fx:id="usernameField" promptText="Enter your username" styleClass="text-field-custom" />
+            </VBox>
+
+<!--            <VBox spacing="5.0">-->
+<!--                <HBox alignment="CENTER_LEFT" spacing="5.0">-->
+<!--                    <Label text="Password" />-->
+<!--                    <Region HBox.hgrow="ALWAYS" />-->
+<!--                    <Hyperlink text="Hide" styleClass="password-toggle" onAction="#togglePasswordVisibility" />-->
+<!--                </HBox>-->
+<!--                <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="text-field-custom" />-->
+<!--            </VBox>-->
+
+            <VBox spacing="5.0">
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Label text="Password" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Hyperlink text="Show" styleClass="password-toggle" onAction="#togglePasswordVisibility" />
+                </HBox>
+                <TextField fx:id="visiblePasswordField" managed="false" visible="false" promptText="Enter your password" styleClass="text-field-custom" />
+                <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="text-field-custom" />
+            </VBox>
+
+            <Button fx:id="loginButton" onAction="#handleLoginButton" styleClass="login-button" text="Log in" maxWidth="Infinity">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Hyperlink text="Forget your password" styleClass="forgot-password-link" />
+        </VBox>
+    </VBox>
+</StackPane>

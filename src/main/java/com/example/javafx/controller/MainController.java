@@ -36,25 +36,25 @@ public class MainController {
 
     @FXML
     private void handleDashboardClick(ActionEvent event) {
-        loadView("/com/example/javafx/fxml/DashboardView.fxml");
+        loadView("/com/example/javafx/DashboardView.fxml");
         setActiveButton(dashboardButton);
     }
 
     @FXML
     private void handleBooksClick(ActionEvent event) {
-        loadView("/com/example/javafx/fxml/BookView.fxml");
+        loadView("/com/example/javafx/BookView.fxml");
         setActiveButton(booksButton);
     }
 
     @FXML
     private void handleBorrowersClick(ActionEvent event) {
-        loadView("/com/example/javafx/fxml/BorrowerView.fxml");
+        loadView("/com/example/javafx/BorrowerView.fxml");
         setActiveButton(borrowersButton);
     }
 
     @FXML
     private void handleIssueReturnClick(ActionEvent event) {
-        loadView("/com/example/javafx/fxml/IssueReturnView.fxml");
+        loadView("/com/example/javafx/IssueReturnView.fxml");
         setActiveButton(issueButton);
     }
 

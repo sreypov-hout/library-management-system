@@ -1,7 +1,10 @@
 /* Main background of the application */
+
+/* General Styling */
 .root {
-    -fx-font-family: 'Segoe UI', Arial, sans-serif;
-    -fx-background-color: #ECEFF1; /* Light grey background */
+    -fx-background-color: #F8F9FA; /* Light background color */
+    -fx-font-family: "Segoe UI", sans-serif; /* Modern, clean font */
+    -fx-font-size: 14px;
 }
 
 /* Sidebar styling */
@@ -42,4 +45,81 @@
 .sidebar-button-active {
     -fx-text-fill: #FFFFFF; /* White text for active button */
     -fx-border-color: #00BCD4; /* Cyan highlight border */
+}
+
+/* Login Card Styling */
+.login-card {
+    -fx-background-color: #FFFFFF; /* White background for the card */
+    -fx-background-radius: 15px; /* Rounded corners */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 20, 0, 0, 10); /* Soft shadow */
+    -fx-border-color: #E0E0E0; /* Subtle border */
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+}
+
+/* Login Title */
+.login-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-alignment: center;
+    -fx-padding: 0 0 10px 0; /* Space below title */
+}
+
+/* Custom Text Fields */
+.text-field-custom {
+    -fx-background-color: #F0F2F5; /* Lighter background for inputs */
+    -fx-background-radius: 8px; /* Rounded corners */
+    -fx-border-color: #D1D5DB; /* Subtle border */
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 15px;
+    -fx-prompt-text-fill: #888888;
+    -fx-text-fill: #333333;
+}
+
+.text-field-custom:focused {
+    -fx-border-color: #007bff; /* Blue border on focus */
+    -fx-background-color: #FFFFFF; /* White background on focus */
+}
+
+/* Login Button */
+.login-button {
+    -fx-background-color: #007bff; /* Blue button */
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 12px 20px;
+}
+
+.login-button:hover {
+    -fx-background-color: #0056b3; /* Darker blue on hover */
+}
+
+.login-button:pressed {
+    -fx-background-color: #004085; /* Even darker blue on press */
+}
+
+/* Hyperlinks */
+.forgot-password-link, .password-toggle {
+    -fx-text-fill: #007bff;
+    -fx-underline: true;
+    -fx-font-size: 12px;
+}
+
+.forgot-password-link:hover, .password-toggle:hover {
+    -fx-text-fill: #0056b3;
+    -fx-underline: false;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #555555;
+}
+
+/* Error Labels (if you add them later) */
+.error-label {
+    -fx-text-fill: #dc3545;
+    -fx-font-size: 12px;
 }
