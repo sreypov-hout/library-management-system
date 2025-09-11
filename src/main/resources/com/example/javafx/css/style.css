@@ -1,0 +1,45 @@
+/* Main background of the application */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #ECEFF1; /* Light grey background */
+}
+
+/* Sidebar styling */
+.sidebar {
+    -fx-background-color: #263238; /* Dark blue-grey */
+    -fx-alignment: top-center;
+    -fx-spacing: 10;
+}
+
+.sidebar-title {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Common style for all sidebar buttons */
+.sidebar .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #B0BEC5; /* Light grey text */
+    -fx-font-size: 14px;
+    -fx-pref-width: 220px;
+    -fx-alignment: center-left;
+    -fx-padding: 10 10 10 30; /* Padding for text alignment */
+    -fx-background-radius: 0; /* Sharp corners */
+    -fx-border-width: 0 0 0 5; /* Left border width */
+    -fx-border-color: transparent; /* Initially transparent border */
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* Style for sidebar buttons on hover */
+.sidebar .button:hover {
+    -fx-background-color: #37474F; /* Slightly lighter on hover */
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Style for the currently active/selected sidebar button */
+.sidebar-button-active {
+    -fx-text-fill: #FFFFFF; /* White text for active button */
+    -fx-border-color: #00BCD4; /* Cyan highlight border */
+}
