@@ -18,7 +18,6 @@
     <VBox alignment="CENTER" spacing="20.0">
         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
             <image>
-<!--                <Image url="@/com/example/javafx/images/logo/logo_login.png" />-->
                 <Image url="@/logo-login.png" />
             </image>
             <VBox.margin>
@@ -36,15 +35,6 @@
                 <Label text="Username" />
                 <TextField fx:id="usernameField" promptText="Enter your username" styleClass="text-field-custom" />
             </VBox>
-
-<!--            <VBox spacing="5.0">-->
-<!--                <HBox alignment="CENTER_LEFT" spacing="5.0">-->
-<!--                    <Label text="Password" />-->
-<!--                    <Region HBox.hgrow="ALWAYS" />-->
-<!--                    <Hyperlink text="Hide" styleClass="password-toggle" onAction="#togglePasswordVisibility" />-->
-<!--                </HBox>-->
-<!--                <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="text-field-custom" />-->
-<!--            </VBox>-->
 
             <VBox spacing="5.0">
                 <HBox alignment="CENTER_LEFT" spacing="5.0">

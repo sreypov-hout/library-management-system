@@ -1,15 +1,13 @@
-/* Main background of the application */
-
 /* General Styling */
 .root {
-    -fx-background-color: #F8F9FA; /* Light background color */
-    -fx-font-family: "Segoe UI", sans-serif; /* Modern, clean font */
+    -fx-background-color: #F8F9FA;
+    -fx-font-family: "Segoe UI", sans-serif;
     -fx-font-size: 14px;
 }
 
 /* Sidebar styling */
 .sidebar {
-    -fx-background-color: #263238; /* Dark blue-grey */
+    -fx-background-color: #263238;
     -fx-alignment: top-center;
     -fx-spacing: 10;
 }
@@ -21,56 +19,52 @@
     -fx-padding: 0 0 20 0;
 }
 
-/* Common style for all sidebar buttons */
 .sidebar .button {
     -fx-background-color: transparent;
-    -fx-text-fill: #B0BEC5; /* Light grey text */
+    -fx-text-fill: #B0BEC5;
     -fx-font-size: 14px;
     -fx-pref-width: 220px;
     -fx-alignment: center-left;
-    -fx-padding: 10 10 10 30; /* Padding for text alignment */
-    -fx-background-radius: 0; /* Sharp corners */
-    -fx-border-width: 0 0 0 5; /* Left border width */
-    -fx-border-color: transparent; /* Initially transparent border */
+    -fx-padding: 10 10 10 30;
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: transparent;
     -fx-transition: all 0.2s ease-in-out;
 }
 
-/* Style for sidebar buttons on hover */
 .sidebar .button:hover {
-    -fx-background-color: #37474F; /* Slightly lighter on hover */
+    -fx-background-color: #37474F;
     -fx-text-fill: #FFFFFF;
 }
 
-/* Style for the currently active/selected sidebar button */
 .sidebar-button-active {
-    -fx-text-fill: #FFFFFF; /* White text for active button */
-    -fx-border-color: #00BCD4; /* Cyan highlight border */
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #00BCD4;
 }
 
 /* Login Card Styling */
 .login-card {
-    -fx-background-color: #FFFFFF; /* White background for the card */
-    -fx-background-radius: 15px; /* Rounded corners */
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 20, 0, 0, 10); /* Soft shadow */
-    -fx-border-color: #E0E0E0; /* Subtle border */
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 20, 0, 0, 10);
+    -fx-border-color: #E0E0E0;
     -fx-border-radius: 15px;
     -fx-border-width: 1px;
 }
 
-/* Login Title */
 .login-title {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
     -fx-alignment: center;
-    -fx-padding: 0 0 10px 0; /* Space below title */
+    -fx-padding: 0 0 10px 0;
 }
 
 /* Custom Text Fields */
 .text-field-custom {
-    -fx-background-color: #F0F2F5; /* Lighter background for inputs */
-    -fx-background-radius: 8px; /* Rounded corners */
-    -fx-border-color: #D1D5DB; /* Subtle border */
+    -fx-background-color: #F0F2F5;
+    -fx-background-radius: 8px;
+    -fx-border-color: #D1D5DB;
     -fx-border-radius: 8px;
     -fx-border-width: 1px;
     -fx-padding: 10px 15px;
@@ -79,13 +73,13 @@
 }
 
 .text-field-custom:focused {
-    -fx-border-color: #007bff; /* Blue border on focus */
-    -fx-background-color: #FFFFFF; /* White background on focus */
+    -fx-border-color: #007bff;
+    -fx-background-color: #FFFFFF;
 }
 
 /* Login Button */
 .login-button {
-    -fx-background-color: #007bff; /* Blue button */
+    -fx-background-color: #007bff;
     -fx-text-fill: white;
     -fx-background-radius: 8px;
     -fx-font-weight: bold;
@@ -94,11 +88,11 @@
 }
 
 .login-button:hover {
-    -fx-background-color: #0056b3; /* Darker blue on hover */
+    -fx-background-color: #0056b3;
 }
 
 .login-button:pressed {
-    -fx-background-color: #004085; /* Even darker blue on press */
+    -fx-background-color: #004085;
 }
 
 /* Hyperlinks */
@@ -118,8 +112,143 @@
     -fx-text-fill: #555555;
 }
 
-/* Error Labels (if you add them later) */
+/* Error Labels */
 .error-label {
     -fx-text-fill: #dc3545;
     -fx-font-size: 12px;
 }
+
+/* === ADD THESE NEW STYLES TO YOUR EXISTING CSS FILE === */
+
+/* Header Style */
+.header-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Stat Card Styling */
+.stat-card {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-background-radius: 12px;
+    -fx-spacing: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 15, 0, 0, 5);
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+}
+
+.stat-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #444444;
+}
+
+.stat-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888888;
+}
+
+.stat-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #007bff;
+    -fx-padding: 10px 0 0 0;
+}
+
+/* Chart Card Styling */
+.chart-card {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 15, 0, 0, 5);
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+}
+
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 0 15px 0;
+}
+
+/* === ADD THESE NEW STYLES TO THE BOTTOM OF YOUR CSS FILE === */
+
+/* Header Style */
+.header-title {
+    -fx-font-size: 16px;
+    -fx-text-fill: #555555;
+}
+
+/* Stat Card Styling */
+.stat-card {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-background-radius: 12px;
+    -fx-spacing: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 15, 0, 0, 4);
+    -fx-border-color: #E9ECEF;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+}
+.stat-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #495057;
+}
+.stat-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ADB5BD;
+}
+.stat-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #007bff;
+    -fx-padding: 10px 0 0 0;
+}
+
+/* Chart Card Styling */
+.chart-card {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 15, 0, 0, 4);
+    -fx-border-color: #E9ECEF;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+}
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #343A40;
+    -fx-padding: 0 0 15px 0;
+}
+
+/* --- Bar Chart Styling --- */
+.chart { -fx-background-color: transparent; -fx-padding: 0; }
+.chart-plot-background { -fx-background-color: transparent; }
+.axis { -fx-tick-label-fill: #ADB5BD; -fx-font-size: 10px; -fx-border-color: transparent; }
+.axis-tick-mark, .axis-minor-tick-mark { -fx-stroke: transparent; }
+.chart-vertical-grid-lines { -fx-stroke: #F1F3F5; }
+.chart-horizontal-grid-lines { -fx-stroke: transparent; }
+.y-axis .axis-label { -fx-text-fill: #ADB5BD; }
+
+.default-color0.chart-bar { -fx-bar-fill: #A0C4FF; }
+.default-color1.chart-bar { -fx-bar-fill: #9BF6FF; }
+.default-color2.chart-bar { -fx-bar-fill: #495057; }
+.default-color3.chart-bar { -fx-bar-fill: #BDB2FF; }
+.default-color4.chart-bar { -fx-bar-fill: #FFC6FF; }
+.default-color5.chart-bar { -fx-bar-fill: #CAFFBF; }
+
+/* --- Pie Chart Styling --- */
+.default-color0.chart-pie { -fx-pie-color: #343A40; } /* English */
+.default-color1.chart-pie { -fx-pie-color: #BDB2FF; } /* Novel */
+.default-color2.chart-pie { -fx-pie-color: #CAFFBF; } /* Other */
+.default-color3.chart-pie { -fx-pie-color: #A0C4FF; } /* History */
+
+.chart-legend { -fx-background-color: transparent; }
+.chart-legend-item-symbol { -fx-background-radius: 0; }
+.chart-legend-item { -fx-text-fill: #555555; }

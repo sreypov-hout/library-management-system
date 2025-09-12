@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yourlibrary.controller.BookController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.controller.BookController">
     <children>
         <VBox alignment="TOP_CENTER" layoutX="32.0" layoutY="28.0" prefHeight="545.0" prefWidth="250.0" spacing="15.0" style="-fx-background-color: #f4f4f4; -fx-background-radius: 10;">
             <padding>

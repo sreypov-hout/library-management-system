@@ -1,7 +1,7 @@
-package com.yourlibrary.controller;
+package com.example.javafx.controller;
 
-import com.yourlibrary.model.Book;
-import com.yourlibrary.service.BookService;
+import com.example.javafx.model.Book;
+import com.example.javafx.service.BookService;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
@@ -9,7 +9,6 @@ import java.io.File;
 
 public class BookController {
 
-    // --- FXML UI Components ---
     @FXML private TextField isbnField;
     @FXML private TextField titleField;
     @FXML private TextField authorField;
@@ -17,25 +16,20 @@ public class BookController {
     @FXML private TextField quantityField;
     @FXML private Label imagePathLabel;
     @FXML private Label statusLabel;
-
     @FXML private TableView<Book> bookTableView;
     @FXML private TableColumn<Book, String> isbnColumn;
     @FXML private TableColumn<Book, String> titleColumn;
     @FXML private TableColumn<Book, String> authorColumn;
     @FXML private TableColumn<Book, Number> quantityColumn;
-
     private final BookService bookService = new BookService();
     private String selectedImagePath = "";
 
     @FXML
     public void initialize() {
-        // Set up table columns to display book properties
         isbnColumn.setCellValueFactory(cellData -> cellData.getValue().isbnProperty());
         titleColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
         authorColumn.setCellValueFactory(cellData -> cellData.getValue().authorProperty());
         quantityColumn.setCellValueFactory(cellData -> cellData.getValue().quantityProperty());
-
-        // Load initial data into the table
         bookTableView.setItems(bookService.getAllBooks());
     }
 
@@ -47,11 +41,9 @@ public class BookController {
             String author = authorField.getText();
             String genre = genreField.getText();
             int quantity = Integer.parseInt(quantityField.getText());
-
             bookService.addBook(isbn, title, author, genre, quantity, selectedImagePath);
-
             statusLabel.setText("Book added successfully!");
-            handleClearFields(); // Clear fields after adding
+            handleClearFields();
         } catch (NumberFormatException e) {
             statusLabel.setText("Error: Quantity must be a number.");
         } catch (IllegalArgumentException e) {

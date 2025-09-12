@@ -12,11 +12,10 @@ import java.io.IOException;
 
 public class MainApplication extends Application {
 
-    private Stage primaryStage; // <-- THIS IS THE MISSING LINE. Declare it here.
+    private Stage primaryStage;
 
     @Override
     public void start(Stage stage) {
-        // Now, assign the stage from the start method to our class variable
         this.primaryStage = stage;
         showLoginView();
     }
@@ -30,9 +29,8 @@ public class MainApplication extends Application {
             loginController.setMainApplication(this);
 
             Scene scene = new Scene(root, 800, 600);
-            scene.getStylesheets().add(getClass().getResource("/com/example/javafx/css/styles.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/com/example/javafx/css/style.css").toExternalForm());
 
-            // This line will now work because primaryStage is visible to the whole class
             primaryStage.setTitle("Library System - Login");
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -47,12 +45,10 @@ public class MainApplication extends Application {
             Parent root = fxmlLoader.load();
 
             MainController mainController = fxmlLoader.getController();
-            // mainController.setMainApplication(this); // Optional: if your main view needs this
 
             Scene scene = new Scene(root, 1100, 700);
-            scene.getStylesheets().add(getClass().getResource("/com/example/javafx/css/styles.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/com/example/javafx/css/style.css").toExternalForm());
 
-            // This line will also work now
             primaryStage.setTitle("Library Management System");
             primaryStage.setScene(scene);
             primaryStage.show();

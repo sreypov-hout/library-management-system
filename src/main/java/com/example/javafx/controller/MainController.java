@@ -25,12 +25,8 @@ public class MainController {
 
     private Button currentButton;
 
-    /**
-     * This method is called when the FXML is loaded. It sets the dashboard as the default view.
-     */
     @FXML
     public void initialize() {
-        // Load the Dashboard view by default when the application starts
         handleDashboardClick(null);
     }
 
@@ -58,30 +54,21 @@ public class MainController {
         setActiveButton(issueButton);
     }
 
-    /**
-     * Loads a view into the center of the main layout.
-     * @param fxmlPath The path to the FXML file.
-     */
     private void loadView(String fxmlPath) {
         try {
             URL fxmlUrl = getClass().getResource(fxmlPath);
             if (fxmlUrl == null) {
                 System.err.println("Cannot find FXML file: " + fxmlPath);
-                mainPane.setCenter(null); // Clear the center if view not found
+                mainPane.setCenter(null);
                 return;
             }
             Parent view = FXMLLoader.load(fxmlUrl);
             mainPane.setCenter(view);
         } catch (IOException e) {
-            System.err.println("Failed to load FXML file: " + fxmlPath);
             e.printStackTrace();
         }
     }
 
-    /**
-     * Changes the CSS style to highlight the active button.
-     * @param activeButton The button that was clicked.
-     */
     private void setActiveButton(Button activeButton) {
         if (currentButton != null) {
             currentButton.getStyleClass().remove("sidebar-button-active");
@@ -92,4 +79,3 @@ public class MainController {
         }
     }
 }
-
