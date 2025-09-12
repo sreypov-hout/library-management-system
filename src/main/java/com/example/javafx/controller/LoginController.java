@@ -42,7 +42,7 @@ public class LoginController {
 
         // --- I HAVE UPDATED THIS LINE ---
         // It now checks for the username "momo" and password "12345"
-        if ("momo".equals(username) && "12345".equals(password)) {
+        if ("mo".equals(username) && "123".equals(password)) {
             System.out.println("Login Successful!");
             if (mainApplication != null) {
                 mainApplication.showMainLibraryView();

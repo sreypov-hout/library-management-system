@@ -1,48 +1,65 @@
-/* General Styling */
+/* === General Application Styling === */
 .root {
     -fx-background-color: #F8F9FA;
     -fx-font-family: "Segoe UI", sans-serif;
     -fx-font-size: 14px;
 }
 
-/* Sidebar styling */
+/* === Sidebar Styling (Main View) === */
+.div-container-top {
+    -fx-spacing: 10; /* Adds 10 pixels of space between items in the column */
+    -fx-padding: 15;  /* Adds 15 pixels of padding around the container */
+    -fx-background-color: lightgray;
+}
+
+/*.logo {*/
+/*    -fx-width: 70px;*/
+/*}*/
 .sidebar {
-    -fx-background-color: #263238;
-    -fx-alignment: top-center;
-    -fx-spacing: 10;
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 0 20px;
+}
+.sidebar-welcome {
+    -fx-font-size: 17px;
+    -fx-text-fill: #6C757D;
 }
 
-.sidebar-title {
-    -fx-text-fill: #FFFFFF;
-    -fx-font-size: 22px;
-    -fx-font-weight: bold;
-    -fx-padding: 0 0 20 0;
-}
-
-.sidebar .button {
-    -fx-background-color: transparent;
-    -fx-text-fill: #B0BEC5;
+.sidebar-user {
     -fx-font-size: 14px;
-    -fx-pref-width: 220px;
-    -fx-alignment: center-left;
-    -fx-padding: 10 10 10 30;
-    -fx-background-radius: 0;
-    -fx-border-width: 0 0 0 5;
-    -fx-border-color: transparent;
-    -fx-transition: all 0.2s ease-in-out;
+    -fx-font-weight: bold;
+    -fx-text-fill: #212529;
 }
 
-.sidebar .button:hover {
-    -fx-background-color: #37474F;
-    -fx-text-fill: #FFFFFF;
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6C757D;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 200px;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 20px;
+    -fx-border-color: transparent; /* Explicitly remove border */
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #E9ECEF;
+    -fx-text-fill: #212529;
 }
 
 .sidebar-button-active {
+    -fx-background-color: #0d6efd;
     -fx-text-fill: #FFFFFF;
-    -fx-border-color: #00BCD4;
 }
 
-/* Login Card Styling */
+/* === Header Styling (Main View) === */
+.header-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6C757D;
+}
+
+/* === Login Screen Styling === */
 .login-card {
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 15px;
@@ -60,7 +77,6 @@
     -fx-padding: 0 0 10px 0;
 }
 
-/* Custom Text Fields */
 .text-field-custom {
     -fx-background-color: #F0F2F5;
     -fx-background-radius: 8px;
@@ -73,13 +89,12 @@
 }
 
 .text-field-custom:focused {
-    -fx-border-color: #007bff;
+    -fx-border-color: #0d6efd;
     -fx-background-color: #FFFFFF;
 }
 
-/* Login Button */
 .login-button {
-    -fx-background-color: #007bff;
+    -fx-background-color: #0d6efd;
     -fx-text-fill: white;
     -fx-background-radius: 8px;
     -fx-font-weight: bold;
@@ -88,146 +103,66 @@
 }
 
 .login-button:hover {
-    -fx-background-color: #0056b3;
+    -fx-background-color: #0b5ed7;
 }
 
 .login-button:pressed {
-    -fx-background-color: #004085;
+    -fx-background-color: #0a58ca;
 }
 
-/* Hyperlinks */
 .forgot-password-link, .password-toggle {
-    -fx-text-fill: #007bff;
+    -fx-text-fill: #0d6efd;
     -fx-underline: true;
     -fx-font-size: 12px;
 }
 
 .forgot-password-link:hover, .password-toggle:hover {
-    -fx-text-fill: #0056b3;
+    -fx-text-fill: #0b5ed7;
     -fx-underline: false;
 }
 
-/* Labels */
-.label {
-    -fx-text-fill: #555555;
-}
-
-/* Error Labels */
-.error-label {
-    -fx-text-fill: #dc3545;
-    -fx-font-size: 12px;
-}
-
-/* === ADD THESE NEW STYLES TO YOUR EXISTING CSS FILE === */
-
-/* Header Style */
-.header-title {
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #333333;
-}
-
-/* Stat Card Styling */
+/* === Dashboard Card Styling === */
 .stat-card {
     -fx-background-color: #FFFFFF;
     -fx-padding: 20px;
     -fx-background-radius: 12px;
     -fx-spacing: 5px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 15, 0, 0, 5);
-    -fx-border-color: #E0E0E0;
-    -fx-border-width: 1px;
-    -fx-border-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(108, 117, 125, 0.1), 20, 0, 0, 5);
+    -fx-border-color: transparent;
 }
 
-.stat-title {
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #444444;
-}
-
-.stat-subtitle {
-    -fx-font-size: 12px;
-    -fx-text-fill: #888888;
-}
-
-.stat-value {
-    -fx-font-size: 28px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #007bff;
-    -fx-padding: 10px 0 0 0;
-}
-
-/* Chart Card Styling */
-.chart-card {
-    -fx-background-color: #FFFFFF;
-    -fx-padding: 20px;
-    -fx-background-radius: 12px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 15, 0, 0, 5);
-    -fx-border-color: #E0E0E0;
-    -fx-border-width: 1px;
-    -fx-border-radius: 12px;
-}
-
-.chart-title {
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #333333;
-    -fx-padding: 0 0 15px 0;
-}
-
-/* === ADD THESE NEW STYLES TO THE BOTTOM OF YOUR CSS FILE === */
-
-/* Header Style */
-.header-title {
-    -fx-font-size: 16px;
-    -fx-text-fill: #555555;
-}
-
-/* Stat Card Styling */
-.stat-card {
-    -fx-background-color: #FFFFFF;
-    -fx-padding: 20px;
-    -fx-background-radius: 12px;
-    -fx-spacing: 5px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 15, 0, 0, 4);
-    -fx-border-color: #E9ECEF;
-    -fx-border-width: 1px;
-    -fx-border-radius: 12px;
-}
 .stat-title {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #495057;
 }
+
 .stat-subtitle {
     -fx-font-size: 12px;
     -fx-text-fill: #ADB5BD;
 }
+
 .stat-value {
     -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #007bff;
-    -fx-padding: 10px 0 0 0;
+    -fx-text-fill: #0d6efd;
 }
 
-/* Chart Card Styling */
 .chart-card {
-    -fx-background-color: #FFFFFF;
-    -fx-padding: 20px;
+    -fx-background-color: #ffffff;
+    -fx-padding: 10px;
     -fx-background-radius: 12px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 15, 0, 0, 4);
-    -fx-border-color: #E9ECEF;
-    -fx-border-width: 1px;
-    -fx-border-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(108, 117, 125, 0.1), 20, 0, 0, 5);
+    -fx-border-color: transparent;
 }
+
 .chart-title {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #343A40;
-    -fx-padding: 0 0 15px 0;
 }
 
-/* --- Bar Chart Styling --- */
+/* --- Chart Styling --- */
 .chart { -fx-background-color: transparent; -fx-padding: 0; }
 .chart-plot-background { -fx-background-color: transparent; }
 .axis { -fx-tick-label-fill: #ADB5BD; -fx-font-size: 10px; -fx-border-color: transparent; }
@@ -241,9 +176,10 @@
 .default-color2.chart-bar { -fx-bar-fill: #495057; }
 .default-color3.chart-bar { -fx-bar-fill: #BDB2FF; }
 .default-color4.chart-bar { -fx-bar-fill: #FFC6FF; }
-.default-color5.chart-bar { -fx-bar-fill: #CAFFBF; }
+.default-color5.chart-bar { -fx-bar-fill: #FFC6FF; }
+.default-color6.chart-bar { -fx-bar-fill: #FFC6FF; }
+.default-color7.chart-bar { -fx-bar-fill: #CAFFBF; }
 
-/* --- Pie Chart Styling --- */
 .default-color0.chart-pie { -fx-pie-color: #343A40; } /* English */
 .default-color1.chart-pie { -fx-pie-color: #BDB2FF; } /* Novel */
 .default-color2.chart-pie { -fx-pie-color: #CAFFBF; } /* Other */

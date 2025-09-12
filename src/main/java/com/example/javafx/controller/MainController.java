@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox; // Import VBox
+
 import java.io.IOException;
 import java.net.URL;
 
@@ -13,7 +15,8 @@ public class MainController {
 
     @FXML
     private BorderPane mainPane;
-
+    @FXML
+    private VBox contentArea; // This is the new VBox for content
     @FXML
     private Button dashboardButton;
     @FXML
@@ -22,6 +25,8 @@ public class MainController {
     private Button borrowersButton;
     @FXML
     private Button issueButton;
+    @FXML
+    private Button returnBooksButton;
 
     private Button currentButton;
 
@@ -54,16 +59,23 @@ public class MainController {
         setActiveButton(issueButton);
     }
 
+    @FXML
+    private void handleReturnBooksClick(ActionEvent event) {
+        // You can create a ReturnView.fxml for this later
+        // loadView("/com/example/javafx/ReturnView.fxml");
+        setActiveButton(returnBooksButton);
+    }
+
     private void loadView(String fxmlPath) {
         try {
             URL fxmlUrl = getClass().getResource(fxmlPath);
             if (fxmlUrl == null) {
                 System.err.println("Cannot find FXML file: " + fxmlPath);
-                mainPane.setCenter(null);
+                contentArea.getChildren().clear();
                 return;
             }
             Parent view = FXMLLoader.load(fxmlUrl);
-            mainPane.setCenter(view);
+            contentArea.getChildren().setAll(view); // Load content into the VBox
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -73,9 +85,7 @@ public class MainController {
         if (currentButton != null) {
             currentButton.getStyleClass().remove("sidebar-button-active");
         }
+        activeButton.getStyleClass().add("sidebar-button-active");
         currentButton = activeButton;
-        if (currentButton != null) {
-            currentButton.getStyleClass().add("sidebar-button-active");
-        }
     }
 }

@@ -37,6 +37,9 @@ public class DashboardController {
         series.getData().add(new XYChart.Data<>("English", 55));
         series.getData().add(new XYChart.Data<>("Novel", 90));
         series.getData().add(new XYChart.Data<>("Story telling", 30));
+        series.getData().add(new XYChart.Data<>("Story ", 30));
+        series.getData().add(new XYChart.Data<>("Story love", 30));
+        series.getData().add(new XYChart.Data<>("Story like", 30));
         series.getData().add(new XYChart.Data<>("Other", 75));
         availableBooksChart.getData().add(series);
 
