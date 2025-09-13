@@ -26,15 +26,18 @@
                     </padding>
                     <children>
                         <VBox alignment="CENTER">
-                            <ImageView fx:id="bookImageView" fitHeight="150.0" fitWidth="120.0"
-                                       pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@/com/example/javafx/images/book_covers/power.png"/>
-                                </image>
-                            </ImageView>
+                            <children>
+                                <ImageView fx:id="bookImageView" fitHeight="150.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/com/example/javafx/images/book_covers/power.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
                         </VBox>
                         <VBox alignment="CENTER">
-                        <Button mnemonicParsing="false" onAction="#handleSelectImage" prefHeight="30.0" prefWidth="120.0" styleClass="select-image-button" text="Select Image" />
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#handleSelectImage" prefHeight="30.0" prefWidth="120.0" styleClass="select-image-button" text="Select Image" />
+                            </children>
                         </VBox>
                         <Label text="ISBN" />
                         <TextField fx:id="isbnField" promptText="e.g., 987-377-39" />
@@ -62,7 +65,7 @@
                         <Label fx:id="statusLabel" alignment="CENTER" maxWidth="Infinity" />
                     </children>
                 </VBox>
-                <VBox styleClass="form-card" HBox.hgrow="ALWAYS" spacing="100">
+                <VBox styleClass="form-card" HBox.hgrow="ALWAYS">
                     <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </padding>
@@ -71,11 +74,11 @@
                         <TableView fx:id="bookTableView" styleClass="book-table" VBox.vgrow="ALWAYS">
                             <columns>
                                 <TableColumn fx:id="isbnColumn" prefWidth="100.0" text="ISBN" />
-                                <TableColumn fx:id="titleColumn" prefWidth="150.0" text="Title" />
-                                <TableColumn fx:id="authorColumn" prefWidth="110.0" text="Author" />
-                                <TableColumn fx:id="publisherColumn" prefWidth="70.0" text="Publisher" />
-                                <TableColumn fx:id="quantityColumn" prefWidth="40.0" text="QTY" />
-                                <TableColumn fx:id="statusColumn" prefWidth="90.0" text="Status" />
+                                <TableColumn fx:id="titleColumn" prefWidth="250.0" text="Title" />
+                                <TableColumn fx:id="authorColumn" prefWidth="230.0" text="Author" />
+                                <TableColumn fx:id="publisherColumn" prefWidth="80.0" text="Publisher" />
+                                <TableColumn fx:id="quantityColumn" prefWidth="50.0" text="QTY" />
+                                <TableColumn fx:id="statusColumn" prefWidth="120.0" text="Status" />
                             </columns>
                         </TableView>
                     </children>
@@ -84,4 +87,3 @@
         </HBox>
     </children>
 </AnchorPane>
-
