@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.javafx.BorrowerView"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.controller.BorrowerController">
+    <padding>
+        <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+    </padding>
+    <children>
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox styleClass="form-card" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="table-title" text="Borrower List" />
+                        <TableView fx:id="borrowerTableView" styleClass="borrower-table" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                                <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Name" />
+                                <TableColumn fx:id="phoneColumn" prefWidth="150.0" text="Phone" />
+                                <TableColumn fx:id="genderColumn" prefWidth="130.0" text="Gender" />
+                                <TableColumn fx:id="bookColumn" prefWidth="280.0" text="Book" />
+                                <TableColumn fx:id="issueDateColumn" prefWidth="160.0" text="Issue Date" />
+                                <TableColumn fx:id="returnDateColumn" prefWidth="160.0" text="Return Date" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" styleClass="form-card">
+                    <children>
+                        <ImageView fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@/com/example/javafx/images/book_covers/borrower-bg.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>
