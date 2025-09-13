@@ -15,11 +15,13 @@ public class BookService {
         return bookRepository.getAllBooks();
     }
 
-    public void addBook(String isbn, String title, String author, String genre, int quantity, String imagePath) {
+    public void addBook(String isbn, String title, String author, String publisher, int quantity, String description, String imagePath) {
         if (isbn.isEmpty() || title.isEmpty()) {
             throw new IllegalArgumentException("ISBN and Title cannot be empty.");
         }
-        Book newBook = new Book(isbn, title, author, genre, quantity, imagePath);
+        // This now calls the constructor with all 7 required arguments
+        Book newBook = new Book(isbn, title, author, publisher, quantity, description, imagePath);
         bookRepository.addBook(newBook);
     }
 }
+

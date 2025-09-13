@@ -188,3 +188,94 @@
 .chart-legend { -fx-background-color: transparent; }
 .chart-legend-item-symbol { -fx-background-radius: 0; }
 .chart-legend-item { -fx-text-fill: #555555; }
+
+/* === ADD THESE NEW STYLES FOR THE BOOK VIEW === */
+
+.form-card {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(108, 117, 125, 0.1), 20, 0, 0, 5);
+}
+
+.table-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #343A40;
+    -fx-padding: 0 0 15px 0;
+}
+
+.select-image-button {
+    -fx-background-color: #F8F9FA;
+    -fx-border-color: #DEE2E6;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #495057;
+}
+
+.add-button {
+    -fx-background-color: #0d6efd;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+}
+
+.update-button, .clear-button {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #DEE2E6;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #495057;
+}
+
+.delete-button {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+}
+
+/* === TableView Styling === */
+.book-table .column-header-background {
+    -fx-background-color: #FFFFFF;
+}
+
+.book-table .column-header, .book-table .filler {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: #E9ECEF;
+    -fx-font-weight: bold;
+}
+
+.book-table .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 10px;
+
+}
+
+.book-table .table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #F1F3F5;
+}
+
+.book-table .table-row-cell:odd{
+    -fx-background-color: #F8F9FA;
+}
+
+/* === Status Label Styling === */
+.status-label {
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 15px;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.status-available {
+    -fx-background-color: #D1E7DD;
+    -fx-text-fill: #0F5132;
+}
+
+.status-unavailable {
+    -fx-background-color: #F8D7DA;
+    -fx-text-fill: #842029;
+}
+

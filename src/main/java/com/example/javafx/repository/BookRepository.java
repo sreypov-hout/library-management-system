@@ -8,8 +8,10 @@ public class BookRepository {
     private final ObservableList<Book> books = FXCollections.observableArrayList();
 
     public BookRepository() {
-        books.add(new Book("978-0321765723", "The Lord of the Rings", "J.R.R. Tolkien", "Fantasy", 5, ""));
-        books.add(new Book("978-0743273565", "The Great Gatsby", "F. Scott Fitzgerald", "Fiction", 3, ""));
+        // Sample data now includes publisher, description, and image path
+        books.add(new Book("987-377-39", "The 48 Laws of Power", "Robert Greene", "2004", 4, "Power is a book within a book", ""));
+        books.add(new Book("01", "Follow your heart", "Andrew Matthews", "2003", 3, "Description here", ""));
+        books.add(new Book("03", "Book Six", "MOEY", "2016", 0, "Description here", ""));
     }
 
     public ObservableList<Book> getAllBooks() {
@@ -20,3 +22,4 @@ public class BookRepository {
         books.add(book);
     }
 }
+
