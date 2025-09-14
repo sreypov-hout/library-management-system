@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.controller.DashboardController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.controller.DashboardController">
     <padding>
         <Insets bottom="20.0" left="40.0" right="40.0" top="100.0" />
     </padding>
@@ -32,7 +24,7 @@
             <children>
                 <VBox alignment="CENTER" styleClass="stat-card">
                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@/com/example/javafx/images/logo_dashboard/book.png" />
                             </image>
@@ -44,7 +36,7 @@
                 </VBox>
                 <VBox alignment="CENTER" styleClass="stat-card" GridPane.columnIndex="1">
                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@/com/example/javafx/images/logo_dashboard/store.png" />
                             </image>
@@ -56,7 +48,7 @@
                 </VBox>
                 <VBox alignment="CENTER" styleClass="stat-card" GridPane.columnIndex="2">
                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@/com/example/javafx/images/logo_dashboard/pen.png" />
                             </image>
@@ -68,7 +60,7 @@
                 </VBox>
                 <VBox alignment="CENTER" styleClass="stat-card" GridPane.columnIndex="3">
                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@/com/example/javafx/images/logo_dashboard/people.png" />
                             </image>
@@ -80,11 +72,14 @@
                 </VBox>
             </children>
         </GridPane>
-        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+        <HBox prefWidth="500.0" spacing="20.0" VBox.vgrow="ALWAYS">
             <children>
                 <VBox styleClass="chart-card" HBox.hgrow="ALWAYS">
                     <children>
-                        <Label text="Traffic by Available" styleClass="chart-title" />
+                        <Label styleClass="chart-title" text="Traffic by Available">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></Label>
                         <BarChart fx:id="availableBooksChart" animated="true" barGap="5.0" categoryGap="35.0" legendVisible="false" VBox.vgrow="ALWAYS">
                             <xAxis>
                                 <CategoryAxis side="BOTTOM" />
@@ -92,8 +87,17 @@
                             <yAxis>
                                 <NumberAxis side="LEFT" upperBound="100.0" />
                             </yAxis>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
                         </BarChart>
                     </children>
+               <HBox.margin>
+                  <Insets top="80.0" />
+               </HBox.margin>
                 </VBox>
             </children>
         </HBox>
@@ -101,7 +105,7 @@
             <children>
                 <VBox alignment="TOP_LEFT" styleClass="chart-card" HBox.hgrow="ALWAYS">
                     <children>
-                        <Label text="Traffic by Borrowed" styleClass="chart-title" />
+                        <Label styleClass="chart-title" text="Traffic by Borrowed" />
                         <PieChart fx:id="borrowedBooksChart" animated="false" labelsVisible="false" legendSide="LEFT" VBox.vgrow="ALWAYS" />
                     </children>
                 </VBox>

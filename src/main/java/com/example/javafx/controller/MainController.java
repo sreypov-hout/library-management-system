@@ -62,9 +62,17 @@ public class MainController {
     @FXML
     private void handleReturnBooksClick(ActionEvent event) {
         // You can create a ReturnView.fxml for this later
-        // loadView("/com/example/javafx/ReturnView.fxml");
+         loadView("/com/example/javafx/ReturnView.fxml");
         setActiveButton(returnBooksButton);
     }
+
+
+//    @FXML
+//    private void handleReturnBooksClick(ActionEvent event) {
+//        loadView("/com/example/javafx/ReturnView.fxml");
+//        setActiveButton(returnBooksButton);
+//    }
+
 
     private void loadView(String fxmlPath) {
         try {

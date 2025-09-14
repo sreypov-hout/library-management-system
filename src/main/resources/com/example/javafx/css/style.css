@@ -11,11 +11,11 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 10, 0, 5, 0);
 }
 .sidebar-welcome {
-    -fx-font-size: 14px;
+    -fx-font-size: 17px;
     -fx-text-fill: #6C757D;
 }
 .sidebar-user {
-    -fx-font-size: 16px;
+    -fx-font-size: 17px;
     -fx-font-weight: bold;
     -fx-text-fill: #212529;
 }
@@ -103,7 +103,7 @@
 /* === Dashboard Card Styling === */
 .stat-card {
     -fx-background-color: #FFFFFF;
-    -fx-padding: 20px;
+    -fx-padding: 10px;
     -fx-background-radius: 12px;
     -fx-spacing: 5px;
     -fx-effect: dropshadow(gaussian, rgba(108, 117, 125, 0.1), 20, 0, 0, 5);
@@ -185,27 +185,38 @@
     -fx-text-fill: #495057;
 }
 .add-button {
-    -fx-background-color: #0d6efd;
+    /*-fx-background-color: #0d6efd;*/
+    -fx-background-color: #2563EB;
     -fx-text-fill: white;
     -fx-background-radius: 5px;
 }
-.update-button, .clear-button {
-    -fx-background-color: #FFFFFF;
-    -fx-border-color: #DEE2E6;
+.update-button{
+    -fx-background-color: #16A34A;
+    /*-fx-border-color: #DEE2E6;*/
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
     -fx-text-fill: #495057;
+    -fx-color : #fff;
+    -fx-text-fill: white;
+}
+.clear-button{
+    -fx-background-color : #9CA3AF;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #495057;
+    -fx-color : #fff;
+    -fx-text-fill: white;
 }
 .delete-button {
-    -fx-background-color: #dc3545;
+    -fx-background-color: #DC2626;
     -fx-text-fill: white;
     -fx-background-radius: 5px;
 }
 .book-table .column-header-background {
-    -fx-background-color: #F8F9FA;
+    -fx-background-color: #F8F9FA; /* header */
 }
 .book-table .column-header, .book-table .filler {
-    -fx-background-color: transparent;
+    -fx-background-color: #F0F5FA;;
     -fx-border-width: 0 0 2px 0;
     -fx-border-color: #E9ECEF;
     -fx-font-weight: bold;
@@ -222,7 +233,13 @@
 }
 .book-table .table-row-cell:odd{
     -fx-background-color: #F8F9FA;
+    -fx-text-fill: black;
 }
+
+/*.book-table .table-row-cell:hover{*/
+/*    -fx-background-color: #8DD8FF;*/
+/*    -fx-text-fill: #000;*/
+/*}*/
 .status-label {
     -fx-padding: 5px 10px;
     -fx-background-radius: 15px;
@@ -232,6 +249,7 @@
 .status-available {
     -fx-background-color: #D1E7DD;
     -fx-text-fill: #0F5132;
+    -fx-color: #fff;
 }
 .status-unavailable {
     -fx-background-color: #F8D7DA;
@@ -263,9 +281,129 @@
     -fx-border-color: #F1F3F5;
 }
 
+/* === ADD THESE NEW STYLES FOR THE ISSUE BOOK VIEW === */
 
+.form-section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #343A40;
+    -fx-padding: 15px 0;
+}
 
+.book-detail-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6C757D;
+}
 
+.book-detail-value {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #212529;
+}
+
+.three-dots {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #CED4DA;
+}
+
+.cancel-button {
+    -fx-background-color: #F8F9FA;
+    -fx-border-color: #DEE2E6;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #495057;
+    -fx-pref-width: 100px;
+}
+
+.take-button {
+    -fx-background-color: #0d6efd;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-pref-width: 100px;
+}
+
+.verify-button {
+    -fx-background-color: #198754;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    /*-fx-font-weight: bold;*/
+}
+
+/* === Modal Popup Styling === */
+.modal-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+}
+.success-dialog {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 20, 0, 0, 5);
+    -fx-min-width: 400px;
+    -fx-min-height: 400px;
+    -fx-max-width: 400px;
+    -fx-max-height: 400px;
+}
+.success-icon-container {
+    -fx-background-color: #28a745;
+    -fx-background-radius: 50; /* Perfect circle */
+    -fx-min-width: 60px;
+    -fx-min-height: 60px;
+    -fx-max-width: 60px;
+    -fx-max-height: 60px;
+    -fx-alignment: center;
+}
+.success-checkmark {
+    -fx-font-size: 30px;
+    -fx-text-fill: white;
+}
+.success-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+.success-message {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6C757D;
+    -fx-max-width: 200px; /* Constrain width for wrapping */
+}
+.continue-button {
+    -fx-background-color: #0d6efd;
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 40px;
+}
+.continue-button:hover {
+    -fx-background-color: #0b5ed7;
+}
+
+.modal-close-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6C757D;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-padding: 5px;
+}
+.modal-close-button:hover {
+    -fx-text-fill: #212529;
+}
+
+/* === ADD THESE NEW STYLES FOR THE RETURN BOOK VIEW === */
+
+.return-button {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #DEE2E6;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #495057;
+    -fx-pref-width: 100px;
+    -fx-font-weight: bold;
+}
+
+.return-button:hover {
+    -fx-background-color: #F8F9FA;
+}
 
 
 

@@ -1,14 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.javafx.IssueReturnView"
-            prefHeight="400.0" prefWidth="600.0">
+<!-- ✅ ADD THESE: -->
 
+<AnchorPane prefHeight="640.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.controller.IssueReturnController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="20.0" />
+    </padding>
+    <children>
+        <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox fx:id="mainContainer" spacing="20.0">
+                    <children>
+                        <StackPane prefWidth="320.0">
+                            <children>
+                                <!-- STATE 1: Default View (Visible initially) -->
+                                <VBox fx:id="defaultStateContainer" alignment="TOP_CENTER" spacing="15.0" styleClass="form-card">
+                                    <padding>
+                                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                    </padding>
+                                    <children>
+                                        <VBox alignment="CENTER" spacing="10.0">
+                                            <children>
+                                                <ImageView fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <!-- ✅ FIXED double slash -->
+                                                        <Image url="@/com/example/javafx/images/book_covers/no-img.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label styleClass="book-detail-label" text="Title : ......................." />
+                                                <Label styleClass="book-detail-label" text="Author : ...................." />
+                                                <Label styleClass="book-detail-label" text="Publisher : ..............." />
+                                                <Label styleClass="book-detail-label" text="Quantity : ................" />
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets bottom="20.0" top="20.0" />
+                                            </VBox.margin>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                                <!-- STATE 2: Found View (Hidden initially) -->
+                                <VBox fx:id="foundStateContainer" spacing="15.0" styleClass="form-card" visible="false">
+                                    <padding>
+                                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                    </padding>
+                                    <children>
+                                        <HBox alignment="CENTER_RIGHT">
+                                            <children>
+                                                <Label styleClass="three-dots" text="..." />
+                                            </children>
+                                        </HBox>
+                                        <VBox alignment="CENTER">
+                                            <children>
+                                                <ImageView fx:id="bookImageView" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@/com/example/javafx/images/book_covers/association.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets bottom="20.0" />
+                                            </VBox.margin>
+                                        </VBox>
+                                        <GridPane hgap="10.0" vgap="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" />
+                                                <RowConstraints minHeight="10.0" />
+                                                <RowConstraints minHeight="10.0" />
+                                                <RowConstraints minHeight="10.0" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label styleClass="book-detail-label" text="Title :" />
+                                                <Label fx:id="bookTitleLabel" styleClass="book-detail-value" text="Association 4.0" GridPane.columnIndex="1" />
+                                                <Label styleClass="book-detail-label" text="Author :" GridPane.rowIndex="1" />
+                                                <Label fx:id="bookAuthorLabel" styleClass="book-detail-value" text="Sherry Budzial" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label styleClass="book-detail-label" text="Publisher :" GridPane.rowIndex="2" />
+                                                <Label fx:id="bookPublisherLabel" styleClass="book-detail-value" text="2014" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label styleClass="book-detail-label" text="Quantity :" GridPane.rowIndex="3" />
+                                                <Label fx:id="bookQuantityLabel" styleClass="book-detail-value" text="01" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                            </children>
+                                        </GridPane>
+                                        <Region VBox.vgrow="ALWAYS" />
+                                        <HBox alignment="CENTER" spacing="10.0">
+                                            <children>
+                                                <Button mnemonicParsing="false" onAction="#handleCancelButton" styleClass="cancel-button" text="Cancel" />
+                                                <Button mnemonicParsing="false" onAction="#handleTakeButton" styleClass="take-button" text="Take" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </StackPane>
+                        <VBox styleClass="form-card" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                            <children>
+                                <Label styleClass="form-section-title" text="Borrower Details" />
+                                <GridPane hgap="10.0" vgap="15.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" />
+                                        <RowConstraints minHeight="10.0" />
+                                        <RowConstraints minHeight="10.0" />
+                                        <RowConstraints minHeight="10.0" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Borrower Name :" />
+                                        <TextField fx:id="borrowerNameField" promptText="Hong Thyda" GridPane.columnIndex="1" />
+                                        <Label text="Email :" GridPane.rowIndex="1" />
+                                        <TextField fx:id="emailField" promptText="hongthyda123@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label text="Phone :" GridPane.rowIndex="2" />
+                                        <TextField fx:id="phoneField" promptText="0973435678" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Label text="Gender :" GridPane.rowIndex="3" />
+                                        <ComboBox fx:id="genderComboBox" prefWidth="250.0" promptText="Select" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    </children>
+                                </GridPane>
+                                <Label styleClass="form-section-title" text="Book Details">
+                                    <VBox.margin>
+                                        <Insets top="30.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <GridPane hgap="10.0" vgap="15.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" />
+                                        <RowConstraints minHeight="10.0" />
+                                        <RowConstraints minHeight="10.0" />
+                                        <RowConstraints minHeight="10.0" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Book ID :" />
+                                        <TextField fx:id="bookIdField" promptText="06" GridPane.columnIndex="1" />
+                                        <Label text="Book Title :" GridPane.rowIndex="1" />
+                                        <TextField fx:id="bookTitleField" promptText="Association 4.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label text="Issued Date :" GridPane.rowIndex="2" />
+                                        <DatePicker fx:id="issuedDatePicker" prefWidth="250.0" promptText="22/07/2025" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Label text="Return Date :" GridPane.rowIndex="3" />
+                                        <DatePicker fx:id="returnDatePicker" prefWidth="250.0" promptText="29/07/2025" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    </children>
+                                </GridPane>
+                                <Region VBox.vgrow="ALWAYS" />
+                                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#handleVerifyButton" prefHeight="26.0" prefWidth="82.0" styleClass="verify-button" text="Verify" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Modal Popup -->
+                <StackPane fx:id="successModal" styleClass="modal-overlay" visible="false">
+                    <children>
+                        <StackPane maxWidth="400.0">
+                            <children>
+                                <VBox alignment="CENTER" spacing="15.0" styleClass="success-dialog">
+                                    <children>
+                                        <StackPane styleClass="success-icon-container">
+                                            <children>
+                                                <Label styleClass="success-checkmark" text="✓" />
+                                            </children>
+                                        </StackPane>
+                                        <Label styleClass="success-title" text="Found Successfully" />
+                                        <Label styleClass="success-message" text="Book you want to borrow has been found" />
+                                        <Button mnemonicParsing="false" onAction="#handleContinueButton" styleClass="continue-button" text="Continue" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
+                                    </padding>
+                                </VBox>
+                                <Button onAction="#handleCloseModal" styleClass="modal-close-button" text="✕" StackPane.alignment="TOP_RIGHT">
+                                    <StackPane.margin>
+                                        <Insets right="10.0" top="100.0" />
+                                    </StackPane.margin>
+                                </Button>
+                            </children>
+                        </StackPane>
+                    </children>
+                </StackPane>
+            </children>
+        </StackPane>
+    </children>
 </AnchorPane>

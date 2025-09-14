@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="640.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.controller.ReturnController">
+    <padding>
+        <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+    </padding>
+    <children>
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox prefWidth="925.0" styleClass="form-card" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="table-title" text="Issued Books" />
+                        <TableView fx:id="issuedBooksTable" prefHeight="362.0" prefWidth="849.0" styleClass="borrower-table" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                                <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Name" />
+                                <TableColumn fx:id="phoneColumn" prefWidth="164.0" text="Phone" />
+                                <TableColumn fx:id="genderColumn" prefWidth="116.0" text="Gender" />
+                                <TableColumn fx:id="bookColumn" prefWidth="280.0" text="Book" />
+                                <TableColumn fx:id="issueDateColumn" prefWidth="179.0" text="Issue Date" />
+                                <TableColumn fx:id="returnDateColumn" prefWidth="169.0" text="Return Date" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+                <HBox fx:id="detailsBox" alignment="CENTER_LEFT" spacing="20.0" styleClass="form-card" visible="false">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <ImageView fx:id="bookImageView" fitHeight="120.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <!-- This image is a placeholder and will be replaced by the controller -->
+                                <Image url="@/com/example/javafx/images/book_covers/power.png" />
+                            </image>
+                        </ImageView>
+                        <GridPane hgap="10.0" vgap="5.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" />
+                                <RowConstraints minHeight="10.0" />
+                                <RowConstraints minHeight="10.0" />
+                                <RowConstraints minHeight="10.0" />
+                                <RowConstraints minHeight="10.0" />
+                            </rowConstraints>
+                            <children>
+                                <Label styleClass="book-detail-label" text="Title :" />
+                                <Label fx:id="titleLabel" styleClass="book-detail-value" text="Title of the Book" GridPane.columnIndex="1" />
+                                <Label styleClass="book-detail-label" text="Author :" GridPane.rowIndex="1" />
+                                <Label fx:id="authorLabel" styleClass="book-detail-value" text="Author Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label styleClass="book-detail-label" text="Publisher :" GridPane.rowIndex="2" />
+                                <Label fx:id="publisherLabel" styleClass="book-detail-value" text="Publisher Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label styleClass="book-detail-label" text="Quantity :" GridPane.rowIndex="3" />
+                                <Label fx:id="quantityLabel" styleClass="book-detail-value" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label styleClass="book-detail-label" text="Issued Date :" GridPane.rowIndex="4" />
+                                <Label fx:id="issuedDateLabel" styleClass="book-detail-value" text="dd/mm/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            </children>
+                        </GridPane>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <GridPane alignment="CENTER_RIGHT" hgap="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Return Date :" />
+                                <DatePicker fx:id="returnDatePicker" prefWidth="200.0" promptText="dd/mm/yyyy" GridPane.columnIndex="1" />
+                            </children>
+                        </GridPane>
+                        <Button mnemonicParsing="false" onAction="#handleReturnButton" styleClass="return-button" text="Return" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
