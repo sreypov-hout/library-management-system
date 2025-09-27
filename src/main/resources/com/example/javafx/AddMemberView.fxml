@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="640.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.controller.AddMemberController">
+    <padding>
+        <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+    </padding>
+    <children>
+        <HBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox prefWidth="320.0" spacing="8.0" styleClass="form-card">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="114.0" prefWidth="113.0">
+                            <children>
+                                <ImageView fx:id="memberImageView" fitHeight="150.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <!-- You will need to add a placeholder image here -->
+                                        <Image url="@/com/example/javafx/images/book_covers/Harry-potter.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#handleSelectImage" prefHeight="30.0" prefWidth="120.0" styleClass="select-image-button" text="Select Image" />
+                            </children>
+                        </VBox>
+                        <Label text="Member ID" />
+                        <TextField fx:id="memberIdField" promptText="e.g., M001" />
+                        <Label text="Full Name" />
+                        <TextField fx:id="nameField" promptText="e.g., John Doe" />
+                        <Label text="Email" />
+                        <TextField fx:id="emailField" promptText="e.g., john.doe@example.com" />
+                        <Label text="Phone" />
+                        <TextField fx:id="phoneField" promptText="e.g., 012 345 678" />
+                        <Label text="Gender" />
+                        <ComboBox fx:id="genderComboBox" prefWidth="Infinity" promptText="Select Gender" />
+                        <HBox alignment="CENTER" spacing="10.0">
+                            <children>
+                        <HBox alignment="TOP_CENTER">
+                           <children>
+                                      <Button mnemonicParsing="false" onAction="#handleDeleteMember" prefHeight="26.0" prefWidth="102.0" styleClass="delete-button" text="Delete">
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin></Button>
+                                      <Button mnemonicParsing="false" onAction="#handleClearFields" prefHeight="26.0" prefWidth="102.0" styleClass="clear-button" text="Clear">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                            </children>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                  <HBox alignment="TOP_CENTER">
+                     <children>
+                                <Button mnemonicParsing="false" onAction="#handleUpdateMember" prefHeight="26.0" prefWidth="102.0" styleClass="update-button" text="Update">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin></Button>
+                                <Button mnemonicParsing="false" onAction="#handleAddMember" prefWidth="102.0" styleClass="add-button" text="Add">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></Button>
+                     </children>
+                  </HBox>
+                        <Label fx:id="statusLabel" alignment="CENTER" maxWidth="Infinity" />
+                    </children>
+                </VBox>
+                <VBox styleClass="form-card" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="table-title" text="All Members" />
+                        <TableView fx:id="memberTableView" styleClass="book-table" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="idColumn" prefWidth="80.0" text="Member ID" />
+                                <TableColumn fx:id="nameColumn" prefWidth="180.0" text="Name" />
+                                <TableColumn fx:id="emailColumn" prefWidth="200.0" text="Email" />
+                                <TableColumn fx:id="phoneColumn" prefWidth="120.0" text="Phone" />
+                                <TableColumn fx:id="genderColumn" prefWidth="100.0" text="Gender" />
+                                <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

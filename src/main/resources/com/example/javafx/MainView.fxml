@@ -62,6 +62,18 @@
                         </ImageView>
                     </graphic>
                 </Button>
+
+                <!-- ADD THIS NEW BUTTON -->
+                <Button fx:id="addMemberButton" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleAddMemberClick" styleClass="sidebar-button" text="Add Member">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <!-- Reusing an existing icon, replace if you have a new one -->
+                                <Image url="@/com/example/javafx/images/icons/add-user.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
                 <Button fx:id="issueButton" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleIssueReturnClick" styleClass="sidebar-button" text="Issue Books">
                     <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">

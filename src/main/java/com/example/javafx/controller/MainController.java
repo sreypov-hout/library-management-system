@@ -28,6 +28,7 @@ public class MainController {
     @FXML
     private Button returnBooksButton;
 
+
     private Button currentButton;
 
     @FXML
@@ -66,6 +67,20 @@ public class MainController {
         setActiveButton(returnBooksButton);
     }
 
+    @FXML
+    private void handleAddMemberClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/javafx/AddMemberView.fxml"));
+            Parent addMemberPage = loader.load();
+
+            // Clear old content then add new page
+            contentArea.getChildren().clear();
+            contentArea.getChildren().add(addMemberPage);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 //    @FXML
 //    private void handleReturnBooksClick(ActionEvent event) {
