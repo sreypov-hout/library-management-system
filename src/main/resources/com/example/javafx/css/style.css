@@ -227,12 +227,12 @@
     -fx-alignment: CENTER; /* THIS IS THE NEW LINE TO CENTER THE TEXT */
 }
 .book-table .table-row-cell {
-    -fx-background-color: #FFFFFF;
+    /*-fx-background-color: #FFFFFF;*/
     -fx-border-width: 0 0 1px 0;
-    -fx-border-color: #F1F3F5;
+    /*-fx-border-color: #F1F3F5;*/
 }
 .book-table .table-row-cell:odd{
-    -fx-background-color: #F8F9FA;
+    /*-fx-background-color: #F8F9FA;*/
     -fx-text-fill: black;
 }
 
